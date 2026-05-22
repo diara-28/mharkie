@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MHARKIÈ — Mharkiè Hair & Beauty Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="images/png" href="images/m1.png ">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#projects" onclick="closeMobile()">Gallery</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">MHAR<span>kiè</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Gallery</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-video-wrap">
+    
+        <!-- TO USE A REAL VIDEO — replace the fallback div below with: -->
+        <video autoplay muted loop playsinline>
+          <source src="video/salon.mp4" type="video/mp4">
+        </video>
+    
+      <div class="hero-video-fallback" id="heroBg">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%, rgba(201,168,76,0.08) 0%, transparent 65%), radial-gradient(ellipse at 75% 30%, rgba(100,70,10,0.12) 0%, transparent 60%);"></div>
+        <canvas id="bokehCanvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+      </div>
+    </div>
+    <div class="hero-grain"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"></p>
+      <h1 class="hero-title">Where Beauty<br><em>Becomes Art</em></h1>
+      <p class="hero-sub">Experience the pinnacle of hair artistry and beauty treatments in an atmosphere of refined elegance.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Book a Session</a>
+        <a href="#projects" class="btn-outline">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-label reveal">Our Story</p>
+      <h2 class="section-title reveal reveal-delay-1">Crafting <em>Luminous</em><br>Transformations</h2>
+      <p class="reveal reveal-delay-2">Founded on a belief that every person deserves to feel extraordinary, Lumière brings together master stylists trained in the world's most prestigious studios — from Paris to Milan to New York.</p>
+      <p class="reveal reveal-delay-3">We believe beauty is deeply personal. Our consultative approach ensures every service is tailored to your unique features, lifestyle, and aspirations.</p>
+      <div class="about-stats">
+        <div class="reveal reveal-delay-2"><div class="stat-num">12+</div><div class="stat-label">Years of Excellence</div></div>
+        <div class="reveal reveal-delay-3"><div class="stat-num">8K</div><div class="stat-label">Happy Clients</div></div>
+        <div class="reveal reveal-delay-4"><div class="stat-num">24</div><div class="stat-label">Master Stylists</div></div>
+        <div class="reveal reveal-delay-5"><div class="stat-num">6</div><div class="stat-label">Award Wins</div></div>
+      </div>
+    </div>
+    <div class="about-image reveal reveal-right">
+      <div class="about-img-frame">
+        <div class="about-img-inner">
+          <div>
+            <img src="images/pinky1-removebg-preview.png" class="about-img-glyph" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div style="max-width:600px">
+      <p class="section-label reveal">What We Offer</p>
+      <h2 class="section-title reveal reveal-delay-1">Our <em>Signature</em><br>Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">✂️</div>
+        <div class="service-name">Precision Cuts</div>
+        <div class="service-desc">Architecture for your hair. Our stylists sculpt each cut with surgical precision, considering your bone structure, hair texture, and lifestyle.</div>
+        <div class="service-price">From £ 85</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-icon">🎨</div>
+        <div class="service-name">Color Artistry</div>
+        <div class="service-desc">Balayage, ombré, vivids, and corrective color — we create dimensional, multi-tonal color that catches the light beautifully.</div>
+        <div class="service-price">From £ 140</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-icon">💆</div>
+        <div class="service-name">Scalp Rituals</div>
+        <div class="service-desc">Therapeutic treatments rooted in science and nature, restoring balance to the scalp and revitalizing hair from root to tip.</div>
+        <div class="service-price">From £ 65</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">04</div>
+        <div class="service-icon">💍</div>
+        <div class="service-name">Bridal Styling</div>
+        <div class="service-desc">Your most important day deserves a look that is timeless. We work closely with you from consultation to the final moment.</div>
+        <div class="service-price">From £ 250</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">05</div>
+        <div class="service-icon">✨</div>
+        <div class="service-name">Luxury Facials</div>
+        <div class="service-desc">Tailored facial treatments using premium skincare formulations. Glow, lift, hydrate — results you see and feel immediately.</div>
+        <div class="service-price">From £ 110</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">06</div>
+        <div class="service-icon">💇‍♀️</div>
+        <div class="service-name">Braid Making</div>
+        <div class="service-desc">Creating neat, beautiful, and long-lasting braids with style, care, and perfection.</div>
+        <div class="service-price">From £ 180</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / GALLERY -->
+  <section class="projects" id="projects">
+    <div class="projects-header">
+      <div>
+        <p class="section-label reveal">Our Portfolio</p>
+        <h2 class="section-title reveal reveal-delay-1">Works of <em>Artistry</em></h2>
+      </div>
+      <a href="#contact" class="btn-outline reveal" style="margin-bottom:1rem">View All Work</a>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-bg p1" style="width:100%;height:100%"><div class="project-letter"><img src="images/braids.jpeg" class="project-letter" alt=""></div></div>
+        <div class="project-gradient"></div>
+        <div class="project-info"><div class="project-tag">BRAIDS</div><div class="project-name"></div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-bg p2" style="width:100%;height:100%"><div class="project-letter"><img src="images/cuts.jpeg" class="project-letter" alt=""></div></div>
+        <div class="project-gradient"></div>
+        <div class="project-info"><div class="project-tag">Precision Cut</div><div class="project-name"></div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-bg p3" style="width:100%;height:100%"><div class="project-letter"><img src="images/bridall.jpeg" class="project-letter" alt=""></div></div>
+        <div class="project-gradient"></div>
+        <div class="project-info"><div class="project-tag">Bridal</div><div class="project-name"></div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-bg p4" style="width:100%;height:100%"><div class="project-letter"><img src="images/scalp ritual 1.jpeg" alt="" width="400px"></div></div>
+        <div class="project-gradient"></div>
+        <div class="project-info"><div class="project-tag">Scalp Ritual</div><div class="project-name"></div></div>
+      </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-bg p5" style="width:100%;height:100%"><div class="project-letter"><img src="images/luxury facial.jpeg" class="project-letter" alt="" width="400px"></div></div>
+        <div class="project-gradient"></div>
+        <div class="project-info"><div class="project-tag">Luxury Facial</div><div class="project-name"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-wrap">
+      <p class="section-label reveal" style="justify-content:center">Client Love</p>
+      <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:3rem">What They <em>Say</em></h2>
+      <div class="quote-mark reveal">"</div>
+      <div class="testimonials-slider reveal reveal-delay-1">
+        <div class="testimonial active">
+          <p class="testimonial-text">Mharkiè completely transformed my relationship with my hair. The attention to detail, the consultation process, the result — it was beyond anything I have experienced at any salon before.</p>
+          <div class="testimonial-author">— Isabelle Laurent, London</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">I was nervous about going blonde after years of dark hair. The colorist walked me through every step and the result was absolutely breathtaking. I receive compliments every single day.</p>
+          <div class="testimonial-author">— Mira Patel, Manchester</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">My bridal hair and makeup was perfection. They understood my vision immediately and executed it flawlessly. My wedding photos are a dream — entirely because of Lumière.</p>
+          <div class="testimonial-author">— Sophie Andersson, Edinburgh</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">The scalp ritual was a revelation. I had no idea how much my scalp health was affecting my hair. Three sessions in and the difference is remarkable.</p>
+          <div class="testimonial-author">— James Okafor, Birmingham</div>
+        </div>
+      </div>
+      <div class="testimonial-dots reveal">
+        <div class="dot active" onclick="goToTestimonial(0)"></div>
+        <div class="dot" onclick="goToTestimonial(1)"></div>
+        <div class="dot" onclick="goToTestimonial(2)"></div>
+        <div class="dot" onclick="goToTestimonial(3)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-info">
+      <p class="section-label reveal">Get In Touch</p>
+      <h2 class="section-title reveal reveal-delay-1">Begin Your <em>Journey</em></h2>
+      <p class="reveal reveal-delay-2">We would love to welcome you to Lumière. Book a consultation or simply reach out — our team is here to guide you toward the look you have always envisioned.</p>
+      <div class="contact-details">
+        <div class="contact-item reveal reveal-delay-2">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text"><strong>Visit Us</strong><span>14 Beaumont Street, Mayfair, London W1G 6HN</span></div>
+        </div>
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text"><strong>Call Us</strong><span>+44 (0) 207 495 8820</span></div>
+        </div>
+        <div class="contact-item reveal reveal-delay-4">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-item-text"><strong>Opening Hours</strong><span>Mon–Sat: 9am – 7pm · Sun: 10am – 5pm</span></div>
+        </div>
+        <div class="contact-item reveal reveal-delay-5">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-item-text"><strong>Email</strong><span>hello@lumieresalon.co.uk</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group reveal"><label>First Name</label><input type="text" placeholder="Isabelle" required/></div>
+          <div class="form-group reveal reveal-delay-1"><label>Last Name</label><input type="text" placeholder="Laurent" required/></div>
+        </div>
+        <div class="form-group reveal reveal-delay-1"><label>Email Address</label><input type="email" placeholder="isabelle@email.com" required/></div>
+        <div class="form-group reveal reveal-delay-2"><label>Phone Number</label><input type="tel" placeholder="+44 7700 900000"/></div>
+        <div class="form-group reveal reveal-delay-2">
+          <label>Service of Interest</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Precision Cut</option>
+            <option>Color Artistry</option>
+            <option>Scalp Ritual</option>
+            <option>Bridal Styling</option>
+            <option>Luxury Facial</option>
+            <option>Keratin & Bond Therapy</option>
+            <option>General Consultation</option>
+          </select>
+        </div>
+        <div class="form-group reveal reveal-delay-3"><label>Tell Us More</label><textarea placeholder="Share your vision, current hair concerns, or any questions..."></textarea></div>
+        <button type="submit" class="form-submit reveal reveal-delay-4">Send Message ✦</button>
+        <div class="form-success" id="formSuccess">✦ Thank you — we will be in touch within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Mharkiè</div>
+    <div class="footer-copy">© 2026 Mharkiè Beauty Studio. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="#">IG</a><a href="#">FB</a><a href="#">TK</a><a href="#">PI</a>
+    </div>
+  </footer>
+
+  <script>
+    // CUSTOM CURSOR
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animCursor() {
+      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    document.querySelectorAll('a, button, .dot, .service-card, .project-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(2)';
+        ring.style.transform = 'translate(-50%,-50%) scale(1.5)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+        ring.style.transform = 'translate(-50%,-50%) scale(1)';
+      });
+    });
+
+    // NAVBAR + SCROLL PROGRESS
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('scrollProgress').style.width = (window.scrollY / h * 100) + '%';
+    });
+
+    // MOBILE MENU
+    function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // TESTIMONIALS
+    let cur = 0;
+    const slides = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.dot');
+    function goToTestimonial(n) {
+      slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+      cur = n;
+      slides[cur].classList.add('active'); dots[cur].classList.add('active');
+    }
+    setInterval(() => goToTestimonial((cur + 1) % slides.length), 5000);
+
+    // FORM
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Sending...'; btn.style.opacity = '0.6';
+      setTimeout(() => {
+        btn.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 1200);
+    }
+
+    // BOKEH CANVAS
+    const canvas = document.getElementById('bokehCanvas');
+    const ctx = canvas.getContext('2d');
+    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+        this.r = Math.random() * 80 + 20; this.alpha = Math.random() * 0.06 + 0.01;
+        this.vx = (Math.random() - 0.5) * 0.15; this.vy = (Math.random() - 0.5) * 0.1;
+        this.life = 0; this.maxLife = Math.random() * 600 + 300;
+      }
+      draw() {
+        this.life++;
+        if (this.life > this.maxLife) this.reset();
+        this.x += this.vx; this.y += this.vy;
+        const a = this.alpha * Math.sin((this.life / this.maxLife) * Math.PI);
+        const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+        g.addColorStop(0, `rgba(201,168,76,${a})`); g.addColorStop(1, 'transparent');
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = g; ctx.fill();
+      }
+    }
+    const particles = Array.from({ length: 30 }, () => new Particle());
+    function animBokeh() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => p.draw());
+      requestAnimationFrame(animBokeh);
+    }
+    animBokeh();
+
+    // HERO PARALLAX
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      const hc = document.querySelector('.hero-content');
+      if (hc && y < window.innerHeight) {
+        hc.style.transform = `translateY(${y * 0.25}px)`;
+        hc.style.opacity = 1 - y / (window.innerHeight * 0.7);
+      }
+    });
+  </script>
+</body>
+</html> 
